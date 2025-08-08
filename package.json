@@ -1,0 +1,16 @@
+{
+  "name": "trade-portal-app",
+  "version": "1.0.0",
+  "description": "Trade Improvements App Step 1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "express": "^4.18.2",
+    "multer": "^2.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

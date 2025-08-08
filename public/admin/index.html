@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Admin Dashboard</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="primary-sidebar"><div class="sidebar-header"><h3>Admin Menu</h3></div><nav class="primary-nav"><a href="#" class="nav-link" data-page="programs">All Programs</a><a href="#" class="nav-link" data-page="users">All Users</a><a href="#" class="nav-link" data-page="roles">Roles & Permissions</a></nav></aside>
+        <aside id="secondary-sidebar" class="secondary-sidebar hidden"><a href="#" class="back-link" data-target="programs">&larr; All Programs</a><h3 id="detail-program-name"></h3><nav id="secondary-nav" class="secondary-nav"></nav></aside>
+        <main class="main-content">
+            <div id="programs-page" class="page-content"><header class="page-header"><h2>Program Management</h2></header><div class="content-section"><div class="section-header"><h3>All Programs</h3><button id="go-to-create-program" class="action-button">+ Create New Program</button></div><div id="program-list"></div></div></div>
+            <div id="create-program-page" class="page-content"><header class="page-header"><a href="#" class="back-link" data-target="programs">&larr; Back to All Programs</a><h2>Create New Program</h2></header><div class="content-section"><form id="create-program-form"><label>Program Name</label><input type="text" id="program-name" required><label>Program Description</label><textarea id="program-description"></textarea><label>Program Logo URL</label><input type="text" id="program-logo"><label>Start Date</label><input type="date" id="program-start-date"><label>Start Time</label><input type="time" id="program-start-time"><button type="submit" class="primary-action">Create Program</button></form></div></div>
+            <div id="users-page" class="page-content"><header class="page-header"><h2>User Management</h2></header><div class="content-section"><div class="section-header"><h3>All Users</h3><button id="go-to-invite-user" class="action-button">+ Invite New User</button></div><div id="user-list"></div></div></div>
+            <div id="invite-user-page" class="page-content"><header class="page-header"><a href="#" class="back-link" data-target="users">&larr; Back to All Users</a><h2>Invite New User</h2></header><div class="content-section"><form id="invite-user-form"><input type="text" id="user-firstname" placeholder="First Name" required><input type="text" id="user-lastname" placeholder="Last Name" required><input type="email" id="user-email" placeholder="Email Address" required><button type="submit" class="primary-action">Send Invite</button></form></div></div>
+            <div id="roles-page" class="page-content"><header class="page-header"><h2>Roles & Permissions</h2></header><div class="two-column-layout"><div class="column"><div class="content-section"><h3>Create New Role</h3><form id="create-role-form"><input type="text" id="role-name" placeholder="Role Name" required><button type="submit" class="primary-action">Create Role</button></form></div><div class="content-section"><h3>All Roles</h3><div id="roles-list"></div></div></div><div class="column"><div class="content-section"><h3>Permissions for <span id="selected-role-name">...</span></h3><form id="permissions-form"><div id="permissions-list">Select a role to see permissions.</div><button type="submit" class="primary-action hidden" id="save-permissions-btn">Save Permissions</button></form></div></div></div></div>
+            <div id="assign-roles-page" class="page-content"><header class="page-header"><a href="#" class="back-link" data-target="users">&larr; Back to All Users</a><h2>Assign Roles for <span id="assign-roles-user-name"></span></h2></header><div class="content-section"><form id="assign-roles-form"><div id="assign-roles-list"></div><button type="submit" class="primary-action">Save Roles</button></form></div></div>
+            <div id="program-detail-page" class="page-content"><div id="access-subpage" class="subpage-content active"></div><div id="form-subpage" class="subpage-content"></div></div>
+        </main>
+    </div>
+    <script src="admin-app.js"></script> </body>
+</html>

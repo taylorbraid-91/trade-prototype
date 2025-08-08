@@ -1,0 +1,60 @@
+/* public/user/user-styles.css */
+:root {
+    --primary-color: #007bff; --success-color: #2ecc71; --danger-color: #e74c3c;
+    --light-grey: #f8f9fa; --medium-grey: #e9ecef; --dark-grey: #6c757d;
+    --text-color: #212529; --white: #fff; --border-color: #dee2e6;
+    --shadow-color: rgba(0,0,0,0.08);
+}
+* { box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-grey); color: var(--text-color); margin: 0; padding: 0;
+}
+.app-container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.app-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: var(--white); border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+.app-header .logo { font-size: 1.5em; font-weight: bold; color: var(--text-color); }
+h2, h3, h4, h5 { color: var(--text-color); }
+a { text-decoration: none; color: var(--primary-color); }
+
+/* --- UNIFIED BUTTON SYSTEM --- */
+.button { display: inline-block; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 0.95em; font-weight: 500; text-align: center; border: 1px solid transparent; transition: all 0.2s ease; }
+.button:hover { transform: translateY(-1px); }
+.button.primary-action { background-color: var(--primary-color); color: var(--white); }
+.button.primary-action:hover { background-color: #0056b3; }
+.button.secondary-action { background-color: transparent; color: var(--primary-color); border-color: var(--primary-color); }
+.button.secondary-action:hover { background-color: var(--primary-color); color: var(--white); }
+.button:disabled { background-color: var(--medium-grey); color: var(--dark-grey); cursor: not-allowed; transform: none; border-color: var(--border-color); }
+
+/* --- UNIFIED FORMS & LOGIN --- */
+.form-container { max-width: 550px; background: var(--white); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px var(--shadow-color); margin: 50px auto; }
+.form-container h2 { text-align: center; margin-bottom: 30px; }
+.form-container .form-link { text-align: center; margin-top: 20px; }
+label { display: block; margin-bottom: 5px; font-weight: 500; }
+input[type="text"], input[type="email"], input[type="file"], textarea, select { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 5px; border: 1px solid var(--border-color); }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.section { margin-bottom: 40px; }
+.content-section { background-color: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px var(--shadow-color); margin-bottom: 30px; }
+
+/* --- DASHBOARD & PROGRAM LISTS --- */
+.carousel-container { display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px; scrollbar-width: none; -ms-overflow-style: none; }
+.carousel-container::-webkit-scrollbar { display: none; }
+.program-card { flex: 0 0 280px; height: 380px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px var(--shadow-color); transition: transform 0.2s ease-in-out; position: relative; }
+.program-card:hover { transform: translateY(-5px); }
+.program-card img { width: 100%; height: 100%; object-fit: cover; }
+.program-card.view-only .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.2s ease-in-out; }
+.program-card.view-only:hover .overlay { opacity: 1; }
+.list-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-radius: 8px; margin-bottom: 10px; background-color: var(--white); box-shadow: 0 2px 5px var(--shadow-color); color: var(--text-color); transition: background-color 0.2s ease; }
+.list-item:hover { background-color: var(--light-grey); }
+.list-item small { display: block; color: var(--dark-grey); font-size: 0.9em; }
+.list-item .arrow { font-size: 1.5em; font-weight: bold; color: var(--medium-grey); }
+
+/* --- SUBMISSION VIEW --- */
+.submission-image { max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px; }
+.submission-status { border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
+.submission-status ul { list-style-type: disc; margin-left: 20px; }
+.status-badge { padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: 500; color: var(--white); }
+.status-submitted { background-color: var(--dark-grey); }
+.status-approved { background-color: var(--success-color); }
+.status-rejected { background-color: var(--danger-color); }
+
+@media (max-width: 768px) { body { padding: 0; } .app-container, .form-container { padding: 15px; } .program-card { flex: 0 0 220px; height: 320px; } .page-header { flex-direction: column; align-items: flex-start; gap: 10px; } }
